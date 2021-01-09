@@ -6,4 +6,4 @@
 
  - Go to [this page](https://simplehtmldom.sourceforge.io/) and download  file from [here](https://sourceforge.net/projects/simplehtmldom/files/)
  - Extract zip file and take **simple_html_dom.php** to project folder.
- - 
+ - [Learn More](https://simplehtmldom.sourceforge.io/manual.htm)

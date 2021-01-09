@@ -13,14 +13,53 @@
 include('simple_html_dom.php');
 
 //https://www.marriott.com/reservation/rateListMenu.mi?defaultTab=prepay
-//$html = file_get_html('https://www.google.com');
-$html = file_get_html('https://www.marriott.com/reservation');
-//$html = file_get_html('https://www.marriott.com/reservation/rateListMenu.mi');
+
+
+
 
 
 
 //TITLE
-echo $html->find('title', 0)->plaintext;
+//$html = file_get_html('https://www.google.com');
+//$html = file_get_html('https://www.marriott.com/reservation');
+//echo $html->find('title', 0)->plaintext;
+
+
+
+
+//GETTING A DIV SECTION
+/*
+$html = file_get_html('https://www.marriott.com');
+echo $html->find('div.tile-hsearch-homepage', 0)->plaintext;
+?>
+<pre />
+<?php
+
+print_r($html->find('div.tile-hsearch-homepage', 0)->plaintext);
+*/
+
+
+//results-container
+$html = file_get_html('https://www.marriott.com');
+$text_result = $html->find('div.tile-hsearch-homepage', 0)->plaintext;
+?>
+<pre />
+<?php
+print_r($text_result);
+
+
+
+?>
+<br><br>
+<?php
+
+//INNER TEXT
+$inner_text_result = $html->find('div.tile-hsearch-homepage', 0)->innertext;
+echo($inner_text_result);
+
+
+//Learn more
+//https://simplehtmldom.sourceforge.io/manual.htm
 
 ?>
 </body>
