@@ -1,6 +1,3 @@
-<?php
-require_once('functions.php');
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,46 +5,50 @@ require_once('functions.php');
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Covid-19 Tracker</title>
+    <title>Web Scraping</title>
 </head>
 <body>
+<div class="yuRUbf">
+    <a href="https://shop.mango.com/us" data-ved="2ahUKEwjyuofF4JHuAhX1X3wKHdlkBMkQFjAAegQIAhAC">
+        <br>
+        <h3 class="LC20lb DKV0Md"><span>Mango USA | Online fashion</span></h3>
+    </a>
+</div>
+
+</body>
+</html>
 <?php
-$url = "https://corona.gov.bd/";
-//$url = "https://news.google.com/covid19/map?hl=en-US&mid=%2Fm%2F0162b&gl=US&ceid=US%3Aen";
-//file_get_contents — Reads entire file into a string
-$page = file_get_contents($url);
-$doc = new DOMDocument('1.0', 'utf-8'); // Represents an entire HTML or XML document; serves as the root of the document tree.
+include "simple_html_dom.php";
 
 
+//https://www.php.net/manual/en/book.curl.php
+//curl_init — Initialize a cURL session
+$curl_handler = curl_init();
+
+//curl_setopt — Set an option for a cURL transfer
+curl_setopt($curl_handler, CURLOPT_URL, 'https://www.google.com/search?q=mango');
+//curl_setopt($curl_handler, CURLOPT_URL, 'https://www.marriott.com/reservation/rateListMenu.mi?defaultTab=standard');
+curl_setopt($curl_handler, CURLOPT_FOLLOWLOCATION, true);
+curl_setopt($curl_handler, CURLOPT_RETURNTRANSFER, true);
+
+//curl_exec — Perform a cURL session
+$response = curl_exec($curl_handler);
+
+//curl_close — Close a cURL session
+curl_close($curl_handler);
+
+//    RESPONSE WHOLE PAGE
+//    echo $response;
 
 
-/*
-//GETTING LINKS AND VALUE OF LINKS
-//HANDLING ERRORS USING @
-@$dom->loadHTMLFile($url);
-$links = array();
-//Loop through each <a> tag in the dom and add it to the link array
-foreach ($dom->getElementsByTagName('a') as $link) {
-    $links[] = array('url' => $link->getAttribute('href'), 'text' => $link->nodeValue);
+//https://simplehtmldom.sourceforge.io/manual.htm
+//SEARCH  FOR TITLE
+$html = new simple_html_dom();
+$html->load($response);
+foreach ($html->find('a[href^=/url?]') as $link ){
+    echo $link->plaintext . "<br />";
 }
-print_r($link);
-echo "<br /> <br /> " . utf8_decode($link->textContent);
-*/
-
-
-
-//HANDLING ERRORS USING @
-// it loads the content without adding enclosing html/body tags and also the doctype declaration
-$doc->LoadHTML($page, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-//print_r(utf8_decode($doc->textContent));
-//print_r($doc);
-//echo dom_dump($doc->getElementsByTagName('section'));
-echo getChildNodeElements($doc->getElementsByTagName('section'));
-//var_dump(getAttrData('class', $doc));
 
 
 ?>
-</body>
-</html>
-
 
