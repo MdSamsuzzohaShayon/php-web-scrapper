@@ -7,3 +7,8 @@
  - Go to [this page](https://simplehtmldom.sourceforge.io/) and download  file from [here](https://sourceforge.net/projects/simplehtmldom/files/)
  - Extract zip file and take **simple_html_dom.php** to project folder.
  - [Learn More](https://simplehtmldom.sourceforge.io/manual.htm)
+
+ #### file_get_contents — Reads entire file into a string
+
+ - [docs](https://www.php.net/manual/en/function.file-get-contents.php)
+ - 
