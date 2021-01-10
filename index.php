@@ -25,64 +25,13 @@
 </div>
 
 <div class="ui container">
-    <!--WEB SCRAPPING START -->
+
     <?php
-    include "simple_html_dom.php";
-
-
-    //https://www.php.net/manual/en/book.curl.php
-    //curl_init — Initialize a cURL session
-    $curl_handler = curl_init();
-
-    //curl_setopt — Set an option for a cURL transfer
-    curl_setopt($curl_handler, CURLOPT_URL, 'https://www.google.com/search?q=mango');
-    //curl_setopt($curl_handler, CURLOPT_URL, 'https://www.marriott.com/reservation/rateListMenu.mi?defaultTab=standard');
-    curl_setopt($curl_handler, CURLOPT_FOLLOWLOCATION, true);
-    curl_setopt($curl_handler, CURLOPT_RETURNTRANSFER, true);
-
-    //curl_exec — Perform a cURL session
-    $response = curl_exec($curl_handler);
-
-    //curl_close — Close a cURL session
-    curl_close($curl_handler);
-
-    //    RESPONSE WHOLE PAGE
-    //    echo $response;
-
-
-    //https://simplehtmldom.sourceforge.io/manual.htm
-    //SEARCH  FOR TITLE
-    $html = new simple_html_dom();
-    $html->load($response);
-//    PRINT EVERYTHING EXCEPT A SPECEFIC ELEMENT
-    foreach ($html->find('a[href^=/url?]') as $link ){
-        echo "<hr />";
-//    strpos — Find the position of the first occurrence of a substring in a string
-//    IF WE CAN NOT FIND THIS URL
-        if(strpos($link->href, "www.flymango.com") === false){
-            echo "<h5 class='ui header purple'>" . $link->plaintext . "</h5><br />";
-        }
-
-    }
-
-
-    echo "<br /> <h1>Break</h1>";
-
-
-    //FINDING SPECIFIC ELEMENT
-    foreach ($html->find('a[href^=/url?]') as $link ){
-        echo "<hr />";
-//    IF WE CAN FIND THIS URL
-        if(!strpos($link->href, "www.flymango.com") === false){
-            echo "<h5 class='ui header purple'>" . $link->plaintext . "</h5><br />";
-        }
-    }
-
-
-
-
+    require_once("google-search.php");
+    echo allElementExceptOne();
+    echo "<h2>Break</h2>";
+    echo speceficElement();
     ?>
-    <!--WEB SCRAPPING ENDS -->
 </div>
 
 
