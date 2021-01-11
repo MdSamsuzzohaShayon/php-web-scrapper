@@ -27,10 +27,16 @@
 <div class="ui container">
 
     <?php
+    /*
     require_once("google-search.php");
     echo allElementExceptOne();
     echo "<h2>Break</h2>";
     echo speceficElement();
+    */
+
+
+    require_once ("instatrip.net.php");
+    
     ?>
 </div>
 
