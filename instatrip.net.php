@@ -14,7 +14,13 @@ curl_setopt($curl_handler, CURLOPT_FOLLOWLOCATION, true);
 curl_setopt($curl_handler, CURLOPT_RETURNTRANSFER, true);
 
 
-
+//SETUP CURL FOR POST REQUEST
+curl_setopt($curl_handler, CURLOPT_POST, true);
+$form_fields = array(
+    "someInputField" => "someInputValue",
+    "someAotherInputField" => "someAnotherInputValue"
+);
+curl_setopt($curl_handler, CURLOPT_POSTFIELDS, http_build_query($form_fields));
 
 //curl_exec — Perform a cURL session
 $response = curl_exec($curl_handler);

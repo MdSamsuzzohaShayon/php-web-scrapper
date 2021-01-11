@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40fa60a9-f2a6-40ff-9903-40367d1135ef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/instatrip.net.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instatrip.net.php" beforeDir="false" afterPath="$PROJECT_DIR$/instatrip.net.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +45,7 @@
       <workItem from="1610224220873" duration="6717000" />
       <workItem from="1610252955573" duration="4142000" />
       <workItem from="1610292758802" duration="6674000" />
-      <workItem from="1610349319914" duration="1183000" />
+      <workItem from="1610349319914" duration="1215000" />
     </task>
     <servers />
   </component>
