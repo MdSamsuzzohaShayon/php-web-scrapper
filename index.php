@@ -12,13 +12,19 @@ require_once('functions.php');
     <link rel="stylesheet" href="css/semantic.min.css">
 </head>
 <body>
+<div class="ui menu">
+        <div class="ui container">
+            <li class="li item"><a href="#" class="link">Home</a></li>
+            <li class="li item"><a href="#" class="link">About</a></li>
+            <li class="li item"><a href="#" class="link">Contact</a></li>
+        </div>
+</div>
 <div class="ui container">
     <?php
     require_once("covid-19.php");
     ?>
 </div>
 
+
 </body>
 </html>
-
-
