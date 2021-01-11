@@ -35,8 +35,12 @@
     */
 
 
+    /*
     require_once ("instatrip.net.php");
-    
+    */
+
+    include_once("linkedin-login.php");
+//    login();
     ?>
 </div>
 
