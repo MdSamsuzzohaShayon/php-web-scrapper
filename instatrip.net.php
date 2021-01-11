@@ -53,9 +53,9 @@ $html->load($response);
 
 
 //services-grid
-foreach ($html->find('div[class=services-grid]') as $link) {
+foreach ($html->find('div[class=services-grid]') as $list) {
 //    strpos — Find the position of the first occurrence of a substring in a string
-        echo  "<h5 class='ui header purple'>" . $link->plaintext . "</h5><br />";
+        echo  " <br /> <hr /> <br /> <h5 class='ui header purple'>" . $list->plaintext . "</h5><br />";
 }
 
 
