@@ -14,6 +14,7 @@ curl_setopt($curl_handler, CURLOPT_FOLLOWLOCATION, true);
 curl_setopt($curl_handler, CURLOPT_RETURNTRANSFER, true);
 
 
+/*
 //SETUP CURL FOR POST REQUEST
 curl_setopt($curl_handler, CURLOPT_POST, true);
 $form_fields = array(
@@ -21,6 +22,9 @@ $form_fields = array(
     "someAotherInputField" => "someAnotherInputValue"
 );
 curl_setopt($curl_handler, CURLOPT_POSTFIELDS, http_build_query($form_fields));
+*/
+
+
 
 //curl_exec — Perform a cURL session
 $response = curl_exec($curl_handler);
@@ -29,14 +33,31 @@ $response = curl_exec($curl_handler);
 curl_close($curl_handler);
 
 //    RESPONSE WHOLE PAGE
-echo $response;
-exit();
+//echo $response;
+//exit();
+
+
+
+
+
+
 
 
 //https://simplehtmldom.sourceforge.io/manual.htm
 //SEARCH  FOR TITLE
 $html = new simple_html_dom();
 $html->load($response);
+
+
+
+
+
+//services-grid
+foreach ($html->find('div[class=services-grid]') as $link) {
+//    strpos — Find the position of the first occurrence of a substring in a string
+        echo  "<h5 class='ui header purple'>" . $link->plaintext . "</h5><br />";
+}
+
 
 
 ?>
