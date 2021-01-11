@@ -16,7 +16,7 @@
 <!--    </a>-->
 <!--</div>-->
 
-<div class="ui stackable inverted secondary massive purple menu">
+<div class="ui stackable inverted secondary massive teal menu">
     <div class="ui container">
         <li class="item"><a href="#" class="link">Home</a></li>
         <li class="item"><a href="#" class="link">About</a></li>
@@ -39,13 +39,15 @@
     require_once ("instatrip.net.php");
     */
 
-    include_once("linkedin-login.php");
+    // include_once("linkedin-login.php");
 //    login();
+
+
+    require_once('covid-tracker.php');
+
     ?>
 </div>
 
 
 </body>
 </html>
-
-
