@@ -10,16 +10,9 @@
 </head>
 <body>
 
-<div class="ui stackable inverted secondary massive teal menu">
-    <div class="ui container">
-        <li class="item"><a href="#" class="link">Home</a></li>
-        <li class="item"><a href="#" class="link">About</a></li>
-        <li class="item"><a href="#" class="link">Contact</a></li>
-    </div>
-</div>
 
 <?php require("shop.php"); ?>
 
-
+<script src="js/semantic.min.js"></script>
 </body>
 </html>
