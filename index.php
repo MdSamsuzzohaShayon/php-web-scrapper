@@ -18,9 +18,7 @@
     </div>
 </div>
 
-<div class="ui container">
-
-</div>
+<?php require("shop.php"); ?>
 
 
 </body>
