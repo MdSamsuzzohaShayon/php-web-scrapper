@@ -56,6 +56,18 @@ foreach ($links as $link) {
   echo "<div class='ui segment blue'>" . $link->textContent . " | <p class='ui tiny header teal' > <u> " . $link->getAttribute('href') . " </u> </p> </div>";
 }
 
+
+/*
+ * //FILE IS NOT CREATING
+$fh = fopen("./links.txt", "a");
+foreach ($links as $link) {
+  // code...
+  fwrite($fh, "something" );
+
+}
+fclose($fh);
+*/
+
 //foreach ($links)
 
 
